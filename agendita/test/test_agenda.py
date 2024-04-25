@@ -1,7 +1,7 @@
 import unittest
 from model.event import Event
 from persistence.mongodb_persistence import MongoDBPersistence
-from service.agenda import Agenda
+from agendita.service.agenda_service import Agenda
 
 class TestAgenda(unittest.TestCase):
     def setUp(self):
