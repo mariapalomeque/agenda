@@ -1,49 +1,49 @@
 class Agenda:
-    def __init__(self, nom, usuaris, esdeveniments, data, duracio, descripcio=None, tags=None, ubicacio=None):
-        self.nom=nom 
-        self.usuaris=usuaris
-        self.esdeveniments=esdeveniments
-        self.data=data
-        self.duracio=duracio
-        self.descripcio=descripcio
+    def __init__(self, name, users, events, date, duration, description=None, tags=None, location=None):
+        self.name=name 
+        self.users=users
+        self.events=events
+        self.date=date
+        self.duration=duration
+        self.description=description
         self.tags=tags
-        self.ubicacio=ubicacio
+        self.location=location
     
-    def get_nom(self):
-        return self.nom
+    def get_name(self):
+        return self.name
 
-    def set_nom(self, nom):
-        self.nom = nom
+    def set_name(self, name):
+        self.name = name
 
-    def get_usuaris(self):
-        return self.usuaris
+    def get_users(self):
+        return self.users
 
-    def set_usuaris(self, usuaris):
-        self.usuaris = usuaris
+    def set_users(self, users):
+        self.users = users
 
-    def get_esdeveniments(self):
-        return self.esdeveniments
+    def get_events(self):
+        return self.events
 
-    def set_esdeveniments(self, esdeveniments):
-        self.esdeveniments = esdeveniments
+    def set_events(self, events):
+        self.events = events
 
-    def get_data(self):
-        return self.data
+    def get_date(self):
+        return self.date
 
-    def set_data(self, data):
-        self.data = data
+    def set_date(self, date):
+        self.date = date
 
-    def get_duracio(self):
-        return self.duracio
+    def get_duration(self):
+        return self.duration
 
-    def set_duracio(self, duracio):
-        self.duracio = duracio
+    def set_duration(self, duration):
+        self.duration = duration
 
-    def get_descripcio(self):
-        return self.descripcio
+    def get_description(self):
+        return self.description
 
-    def set_descripcio(self, descripcio):
-        self.descripcio = descripcio
+    def set_description(self, description):
+        self.description = description
 
     def get_tags(self):
         return self.tags
@@ -51,14 +51,14 @@ class Agenda:
     def set_tags(self, tags):
         self.tags = tags
 
-    def get_ubicacio(self):
-        return self.ubicacio
+    def get_location(self):
+        return self.location
 
-    def set_ubicacio(self, ubicacio):
-        self.ubicacio = ubicacio
+    def set_location(self, location):
+        self.location = location
 
     def __str__(self):
-        return f"Agenda: {self.nom}, Usuaris: {[str(usuari) for usuari in self.usuaris]}, Esdeveniments: {[str(esdeveniment) for esdeveniment in self.esdeveniments]}"
+        return f"Agenda: {self.name}, users: {[str(usuari) for usuari in self.users]}, events: {[str(esdeveniment) for esdeveniment in self.events]}"
 
 
   
