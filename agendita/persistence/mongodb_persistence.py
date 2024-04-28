@@ -8,7 +8,6 @@ class MongoDBPersistence:
         self.collection = self.db[collection_name]
     
     def save(self, agenda_id, event):
-        # Actualizamos para que el evento se guarde dentro de la agenda
         event_dict = {
             "date": event.date,
             "duration": event.duration,
@@ -17,7 +16,7 @@ class MongoDBPersistence:
             "tags": event.tags,
             "location": event.location
         }
-        # Buscamos la agenda por su ID y guardamos el evento en su lista de eventos
+       
         result = self.collection.update_one(
             {"_id": ObjectId(agenda_id)},
             {"$push": {"events": event_dict}}
@@ -25,7 +24,6 @@ class MongoDBPersistence:
         return result.inserted_id
     
     def find(self, agenda_id, event_id):
-        # Buscamos la agenda por su ID y el evento dentro de esa agenda por su ID
         agenda = self.collection.find_one({"_id": ObjectId(agenda_id)})
         if agenda:
             for event in agenda.get("events", []):
@@ -34,7 +32,6 @@ class MongoDBPersistence:
         return None
     
     def update(self, agenda_id, event_id, event):
-        # Actualizamos el evento dentro de la agenda
         event_dict = {
             "date": event.date,
             "duration": event.duration,
@@ -50,7 +47,7 @@ class MongoDBPersistence:
         return result.modified_count
     
     def delete(self, agenda_id, event_id):
-        # Eliminamos el evento de la lista de eventos de la agenda
+        
         result = self.collection.update_one(
             {"_id": ObjectId(agenda_id)},
             {"$pull": {"events": {"_id": ObjectId(event_id)}}}

@@ -31,7 +31,6 @@ class Event:
     def location(self):
         return self._location
     
-    # Setters
     @date.setter
     def date(self, date):
         self._date = date
